@@ -4,6 +4,7 @@ from .models import Post
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm, CommentForm
+from .models import Post, Comment
 
 
 Post.objects.get(pk=pk)
