@@ -6,6 +6,12 @@ from .forms import PostForm
 
 Post.objects.get(pk=pk)
 
+def post_remove(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method=='POST':
+        post.delete()
+    return redirect('post_list')
+
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method=='POST':
